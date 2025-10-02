@@ -1,0 +1,67 @@
+Assignment
+Part 1: HTML File (profile.html)
+Create an HTML file named profile.html. Add the following elements to your page:
+A heading with your full name.
+
+
+A short paragraph about yourself.
+
+
+An image (use a photo of yourself or any image you like, using the <img> tag).
+
+
+A list of your three favorite hobbies.
+
+
+Add a link to one of your favorite websites (e.g., YouTube, Wikipedia, etc.).
+
+
+Create a table with at least two columns (e.g., “Skill” and “Level”) and fill it with three skills you have.
+
+
+Add a footer with a copyright note (e.g., “© 2025 Your Name”).
+
+
+
+Part 2: CSS File (profile.css)
+Create a CSS file named profile.css and link it to your HTML file. Style your page using CSS:
+Change the background color of the entire page.
+
+
+Set a different font for the heading (different from the body text).
+
+
+Add a border or shadow to your image.
+
+
+Style the list with a custom CSS (e.g., colored bullets, spacing, or icons).
+
+
+Add hover effects to your link (e.g., change color when the mouse is over it).
+
+
+Style the table with borders, alternating row colors, and padding.
+
+
+Center your footer and give it a smaller font size.
+
+
+
+Part 3: Extra Challenge (Optional)
+Use CSS to make your profile image round.
+
+
+Add a CSS gradient background.
+
+
+Make the heading text use text-shadow.
+
+
+Add a hover effect to your hobbies list (e.g., when you hover, the text color changes).
+
+
+
+
+Ref: Your ref material for CSS Properties. https://www.tutorialrepublic.com/css-reference/css3-properties.php
+HTML: https://www.w3schools.com/html/default.asp
+
