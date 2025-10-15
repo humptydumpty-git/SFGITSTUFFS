@@ -1435,8 +1435,13 @@ class PharmaStore {
     }
 
     async syncToCloud() {
-        if (!this.firebaseInitialized || !this.isOnline) {
-            this.showMessage('Cannot sync: No internet connection or Firebase not initialized', 'error');
+        if (!this.isOnline) {
+            this.showMessage('Cannot sync: No internet connection', 'error');
+            return;
+        }
+        
+        if (!this.firebaseInitialized) {
+            this.showMessage('Firebase not configured. Please set up Firebase configuration first.', 'error');
             return;
         }
 
@@ -1479,8 +1484,13 @@ class PharmaStore {
     }
 
     async syncFromCloud() {
-        if (!this.firebaseInitialized || !this.isOnline) {
-            this.showMessage('Cannot sync: No internet connection or Firebase not initialized', 'error');
+        if (!this.isOnline) {
+            this.showMessage('Cannot sync: No internet connection', 'error');
+            return;
+        }
+        
+        if (!this.firebaseInitialized) {
+            this.showMessage('Firebase not configured. Please set up Firebase configuration first.', 'error');
             return;
         }
 
@@ -1612,41 +1622,39 @@ class PharmaStore {
 
         const db = window.Firebase.firestore;
         
-        // Listen for real-time updates
-        db.collection('pharmastore').doc('drugs')
-            .onSnapshot((doc) => {
-                if (doc.exists) {
-                    const cloudDrugs = doc.data().data;
-                    const cloudTime = doc.data().lastUpdated.toDate();
-                    const localTime = new Date(this.loadData('lastSyncTime') || 0);
-                    
-                    if (cloudTime > localTime) {
-                        this.drugs = cloudDrugs;
-                        this.saveData('drugs', this.drugs);
-                        this.renderDrugs();
-                        this.updateDashboard();
-                        console.log('Drugs updated from cloud');
-                    }
+        // Listen for real-time updates using proper Firebase v9+ syntax
+        window.Firebase.onSnapshot(window.Firebase.doc(db, 'pharmastore', 'drugs'), (doc) => {
+            if (doc.exists()) {
+                const cloudDrugs = doc.data().data;
+                const cloudTime = doc.data().lastUpdated.toDate();
+                const localTime = new Date(this.loadData('lastSyncTime') || 0);
+                
+                if (cloudTime > localTime) {
+                    this.drugs = cloudDrugs;
+                    this.saveData('drugs', this.drugs);
+                    this.renderDrugs();
+                    this.updateDashboard();
+                    console.log('Drugs updated from cloud');
                 }
-            });
+            }
+        });
 
         // Similar listeners for sales, users, and audit log
-        db.collection('pharmastore').doc('sales')
-            .onSnapshot((doc) => {
-                if (doc.exists) {
-                    const cloudSales = doc.data().data;
-                    const cloudTime = doc.data().lastUpdated.toDate();
-                    const localTime = new Date(this.loadData('lastSyncTime') || 0);
-                    
-                    if (cloudTime > localTime) {
-                        this.sales = cloudSales;
-                        this.saveData('sales', this.sales);
-                        this.renderSales();
-                        this.updateDashboard();
-                        console.log('Sales updated from cloud');
-                    }
+        window.Firebase.onSnapshot(window.Firebase.doc(db, 'pharmastore', 'sales'), (doc) => {
+            if (doc.exists()) {
+                const cloudSales = doc.data().data;
+                const cloudTime = doc.data().lastUpdated.toDate();
+                const localTime = new Date(this.loadData('lastSyncTime') || 0);
+                
+                if (cloudTime > localTime) {
+                    this.sales = cloudSales;
+                    this.saveData('sales', this.sales);
+                    this.renderSales();
+                    this.updateDashboard();
+                    console.log('Sales updated from cloud');
                 }
-            });
+            }
+        });
     }
 
     setupAutoSync() {
