@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pharma Inventory</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Pharmaceutical Inventory</h1>
+  </header>
+
+  <section class="add-item">
+    <h2>Add Medicine</h2>
+    <form id="medicine-form">
+      <input type="text" id="name" placeholder="Medicine Name" required />
+      <input type="text" id="category" placeholder="Category" required />
+      <input type="number" id="quantity" placeholder="Quantity" required />
+      <input type="date" id="expiry" required />
+      <button type="submit">Add</button>
+    </form>
+  </section>
+
+  <section class="inventory">
+    <h2>Inventory List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Expiry Date</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+  <section id="receipt" class="receipt"></section>
+  <section class="sales">
+    <h2>Sell Medicine</h2>
+    <form id="sales-form">
+      <input type="text" id="sale-name" placeholder="Medicine Name" required />
+      <input type="number" id="sale-quantity" placeholder="Quantity Sold" required />
+      <input type="number" id="sale-price" placeholder="Price per Unit" required />
+      <button type="submit">Sell</button>
+    </form>
+  </section>
+  
+  <section id="receipt" class="receipt"></section>
+
+  <script src="script.js"></script>
+</body>
+</html>
