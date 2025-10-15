@@ -1,0 +1,45 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WAAKYE</title>
+</head>
+<body>
+    <h1>Waakye(Ghanaian Rice and Beans)</h1>
+    <p>One of the most beloved local dishes in Ghana is Waakye, a flavorful combination of rice and beans cooked with millet leaves. It's a staple street food and a favorite for breakfast or lunch.</p>
+    <h2> Ingredients </h2>
+    <ul>
+      <li>2 cups of rice </li>
+<li>1 cup of black-eyed peas or cowpeas </li>
+<li>1 handful of dried millet leaves </li>  
+<li> Salt </li>
+<li> Water </li>
+</ul>
+<h2>Instructions </h2>
+<ol> 
+  <li> **Boil the Beans**:
+   - In a large pot, add the soaked beans and enough water to cover them.
+   - Add the millet leaves (or baking soda) to the pot. This gives Waakye its signature reddish-brown color.
+   - Boil until the beans are tender (about 30–45 minutes). Remove the millet leaves once the desired color is achieved. </li>
+   <li>**Add Rice**:
+   - Wash the rice thoroughly and add it to the pot with the beans.
+   - Add more water if needed to cover the rice and beans.
+   - Add salt to taste. </li>
+   <li> **Cook Together**:
+   - Cover and cook on medium heat until the rice is soft and the water is fully absorbed (about 20–25 minutes).
+   - Stir occasionally to prevent burning at the bottom. </li>
+   <li>**Serve**:
+   - Waakye is traditionally served with a variety of sides such as:
+     - Fried plantains
+     - Gari (grated cassava)
+     - Boiled eggs
+     - Spaghetti
+     - Avocado </li>
+     < <img src="https://cdn.freecodecamp.org/curriculum/labs/recipe.jpg" alt="Recipe Image">
+</body>
+</html>
+
+** end of index.html **
+

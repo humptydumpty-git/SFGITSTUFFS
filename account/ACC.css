@@ -1,0 +1,43 @@
+/* Button styles */
+form button, .delete-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form button:hover, .delete-btn:hover {
+  background: #0056b3;
+}
+
+/* Highlight balance card */
+.card.balance {
+  border: 2px solid #007bff;
+  background: #e6f0ff;
+}
+
+/* Table row hover */
+table tbody tr:hover {
+  background: #f0f8ff;
+}
+
+/* Feedback message styling */
+#message {
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+#message[style*="red"] {
+  background: #ffe6e6;
+  color: #b30000;
+}
+
+#message[style*="green"] {
+  background: #e6ffe6;
+  color: #006600;
+}
