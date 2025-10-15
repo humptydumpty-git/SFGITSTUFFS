@@ -1372,8 +1372,9 @@ class PharmaStore {
     initializeFirebase() {
         // Wait for Firebase to be available
         const checkFirebase = () => {
-            if (window.Firebase && window.Firebase.firestore) {
+            if (window.Firebase && window.Firebase.firestore && window.Firebase.writeBatch) {
                 this.firebaseInitialized = true;
+                console.log('Firebase initialized successfully');
                 this.updateSyncStatus();
                 
                 // Set up real-time listeners if cloud sync is enabled
@@ -1381,6 +1382,7 @@ class PharmaStore {
                     this.setupFirestoreListeners();
                 }
             } else {
+                console.log('Waiting for Firebase to initialize...');
                 setTimeout(checkFirebase, 100);
             }
         };
