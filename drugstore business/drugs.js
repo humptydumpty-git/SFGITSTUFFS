@@ -108,5 +108,7 @@ salesForm.addEventListener('submit', function (e) {
   window.print();
 
   salesForm.reset();
+  
 });
+
 }

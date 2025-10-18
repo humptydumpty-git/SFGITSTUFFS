@@ -1222,4 +1222,20 @@ tr:hover {
         flex-direction: column;
         gap: 10px;
     }
+    body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.sale-item {
+  margin-bottom: 10px;
+}
+
+label {
+  margin-right: 5px;
+}
+
+input {
+  margin-right: 15px;
+}
 }
